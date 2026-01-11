@@ -205,14 +205,15 @@ body {
 .why-item {
     text-align: center;
     padding: 30px;
-    border: 2px solid #D4A574;
+    border: 2px solid rgba(6, 182, 212, 0.3); /* Cyan border с прозрачностью */
     border-radius: 12px;
+    background: rgba(6, 182, 212, 0.05); /* Легкий cyan фон */
 }
 
 .why-item h3 {
     font-size: 1.5rem;
     margin-bottom: 16px;
-    color: #D4A574;
+    color: #06b6d4; /* Cyan акцент */
 }
 
 /* Форма обратной связи */

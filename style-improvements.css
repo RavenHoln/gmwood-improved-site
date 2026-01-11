@@ -178,8 +178,23 @@
     border: none; /* Без границы */
 }
 
+/* Альтернативный стиль для вторичной кнопки (прозрачная с рамкой) */
+.hero-cta-btn.secondary {
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    box-shadow: none;
+}
+
+.hero-cta-btn.secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(6, 182, 212, 0.5);
+    color: #06b6d4;
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+}
+
 /* Hover-эффект для hero CTA кнопки */
-.hero-cta-btn:hover {
+.hero-cta-btn:hover:not(.secondary) {
     background: linear-gradient(to right, #0891b2, #ea580c); /* Более насыщенный градиент */
     transform: translateY(-3px) scale(1.02); /* Поднятие и увеличение */
     box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); /* Усиленная тень */
