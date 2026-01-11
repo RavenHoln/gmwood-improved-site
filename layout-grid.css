@@ -1,0 +1,217 @@
+/* ========================================
+   Layout Grid - Интерактивная сетка продуктов
+   ======================================== */
+
+/* Контейнер для сетки с layout grid */
+.layout-grid-container {
+    position: relative; /* Относительное позиционирование */
+    width: 100%; /* Ширина на всю секцию */
+    padding: 40px 20px; /* Отступы */
+    max-width: 1400px; /* Максимальная ширина */
+    margin: 0 auto; /* Центрирование */
+}
+
+/* Сетка продуктов с улучшенным layout */
+.layout-grid {
+    display: grid; /* Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Автоматические колонки */
+    gap: 20px; /* Расстояние между карточками */
+    position: relative; /* Относительное позиционирование */
+}
+
+/* Карточка товара для layout grid */
+.layout-grid-card {
+    position: relative; /* Относительное позиционирование */
+    background: #ffffff; /* Белый фон */
+    border-radius: 12px; /* Скругление углов */
+    overflow: hidden; /* Скрытие переполнения */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень */
+    cursor: pointer; /* Указатель при наведении */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавные переходы */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Вертикальное направление */
+}
+
+/* Переопределение для layout-grid-card чтобы скрыть product-info по умолчанию в карточке */
+.layout-grid-card .product-info {
+    display: none; /* Скрываем информацию в маленькой карточке */
+}
+
+/* Показываем только изображение в маленькой карточке */
+.layout-grid-card img {
+    width: 100%; /* Ширина на всю карточку */
+    height: 100%; /* Высота на всю карточку */
+    object-fit: cover; /* Покрытие с сохранением пропорций */
+    object-position: center; /* Центрирование */
+    display: block; /* Блочный элемент */
+    transition: transform 0.3s ease; /* Плавное изменение */
+}
+
+/* Убираем ссылку вокруг изображения для layout-grid */
+.layout-grid-card > a {
+    display: block; /* Блочный элемент */
+    height: 100%; /* Высота на всю карточку */
+    text-decoration: none; /* Убираем подчеркивание */
+    pointer-events: none; /* Отключаем клики по ссылке */
+}
+
+/* Hover эффект для карточки */
+.layout-grid-card:hover {
+    transform: translateY(-5px); /* Поднятие */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Усиленная тень */
+}
+
+/* Изображение в карточке */
+.layout-grid-card img {
+    width: 100%; /* Ширина на всю карточку */
+    height: 100%; /* Высота на всю карточку */
+    object-fit: cover; /* Покрытие с сохранением пропорций */
+    object-position: center; /* Центрирование */
+    display: block; /* Блочный элемент */
+    transition: transform 0.3s ease; /* Плавное изменение */
+}
+
+/* Затемнение фона при открытой карточке */
+.layout-grid-overlay {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Верх */
+    left: 0; /* Слева */
+    width: 100%; /* Ширина на весь экран */
+    height: 100%; /* Высота на весь экран */
+    background: rgba(0, 0, 0, 0); /* Прозрачный черный */
+    z-index: 100; /* Поверх других элементов */
+    pointer-events: none; /* Не перехватывать события по умолчанию */
+    transition: background 0.3s ease; /* Плавное изменение фона */
+}
+
+/* Затемнение при открытой карточке */
+.layout-grid-overlay.active {
+    background: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный */
+    pointer-events: auto; /* Перехватывать события */
+}
+
+/* Модальная карточка (увеличенная) */
+.layout-grid-card-expanded {
+    position: fixed; /* Фиксированное позиционирование */
+    top: 50%; /* Вертикальный центр */
+    left: 50%; /* Горизонтальный центр */
+    transform: translate(-50%, -50%) scale(0.8); /* Центрирование и начальный масштаб */
+    width: 90%; /* Ширина 90% экрана */
+    max-width: 900px; /* Максимальная ширина */
+    height: 70vh; /* Высота 70% экрана */
+    max-height: 700px; /* Максимальная высота */
+    background: #ffffff; /* Белый фон */
+    border-radius: 16px; /* Скругление углов */
+    overflow: hidden; /* Скрытие переполнения */
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3); /* Тень */
+    z-index: 200; /* Поверх overlay */
+    opacity: 0; /* Начальная прозрачность */
+    pointer-events: none; /* Не перехватывать события */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Плавные переходы */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Вертикальное направление */
+}
+
+/* Активное состояние модальной карточки */
+.layout-grid-card-expanded.active {
+    opacity: 1; /* Полная непрозрачность */
+    transform: translate(-50%, -50%) scale(1); /* Полный масштаб */
+    pointer-events: auto; /* Перехватывать события */
+}
+
+/* Контейнер изображения в модальной карточке */
+.layout-grid-card-expanded-image {
+    width: 100%; /* Ширина на всю карточку */
+    height: 60%; /* Высота 60% карточки */
+    position: relative; /* Относительное позиционирование */
+    overflow: hidden; /* Скрытие переполнения */
+}
+
+/* Изображение в модальной карточке */
+.layout-grid-card-expanded-image img {
+    width: 100%; /* Ширина на всю область */
+    height: 100%; /* Высота на всю область */
+    object-fit: cover; /* Покрытие с сохранением пропорций */
+    object-position: center; /* Центрирование */
+}
+
+/* Контейнер контента в модальной карточке */
+.layout-grid-card-expanded-content {
+    padding: 40px; /* Внутренние отступы */
+    flex: 1; /* Заполнение оставшегося пространства */
+    overflow-y: auto; /* Вертикальная прокрутка при необходимости */
+    background: rgba(0, 0, 0, 0.6); /* Полупрозрачный черный фон */
+    position: relative; /* Относительное позиционирование */
+}
+
+/* Заголовок в модальной карточке */
+.layout-grid-card-expanded-content h3 {
+    font-size: 2rem; /* Большой размер шрифта */
+    font-weight: 700; /* Жирность */
+    color: #ffffff; /* Белый цвет текста */
+    margin-bottom: 16px; /* Отступ снизу */
+}
+
+/* Описание в модальной карточке */
+.layout-grid-card-expanded-content .product-description {
+    font-size: 1.1rem; /* Размер шрифта */
+    color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin-bottom: 24px; /* Отступ снизу */
+}
+
+/* Кнопка закрытия */
+.layout-grid-card-close {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 20px; /* Отступ сверху */
+    right: 20px; /* Отступ справа */
+    width: 40px; /* Ширина */
+    height: 40px; /* Высота */
+    background: rgba(255, 255, 255, 0.2); /* Полупрозрачный белый фон */
+    border: none; /* Без границы */
+    border-radius: 50%; /* Круглая форма */
+    color: #ffffff; /* Белый цвет */
+    font-size: 24px; /* Размер шрифта */
+    cursor: pointer; /* Указатель */
+    display: flex; /* Flexbox */
+    align-items: center; /* Выравнивание по центру */
+    justify-content: center; /* Выравнивание по центру */
+    z-index: 300; /* Поверх контента */
+    transition: background 0.2s ease; /* Плавное изменение фона */
+}
+
+/* Hover эффект для кнопки закрытия */
+.layout-grid-card-close:hover {
+    background: rgba(255, 255, 255, 0.3); /* Более непрозрачный фон */
+}
+
+/* Кнопка CTA в модальной карточке */
+.layout-grid-card-expanded-content .btn-cta {
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 1fr; /* Одна колонка на мобильных */
+        gap: 15px; /* Меньшее расстояние */
+    }
+    
+    .layout-grid-card {
+        height: 300px; /* Меньшая высота на мобильных */
+    }
+    
+    .layout-grid-card-expanded {
+        width: 95%; /* Почти на всю ширину */
+        height: 80vh; /* Высота 80% экрана */
+        max-height: none; /* Без максимальной высоты */
+    }
+    
+    .layout-grid-card-expanded-content {
+        padding: 24px; /* Меньшие отступы */
+    }
+    
+    .layout-grid-card-expanded-content h3 {
+        font-size: 1.5rem; /* Меньший размер заголовка */
+    }
+}
