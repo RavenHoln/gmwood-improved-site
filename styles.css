@@ -65,24 +65,24 @@ body {
 
 .header-nav a:hover,
 .header-nav a.active {
-    color: #D4A574;
+    color: #06b6d4; /* Cyan акцент */
 }
 
 .header-phone {
     font-weight: 700;
     font-size: 1.1rem;
-    color: #D4A574;
+    color: #06b6d4; /* Cyan акцент */
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .header-phone:hover {
-    color: #B8955A;
+    color: #f97316; /* Orange при hover */
 }
 
 /* Hero-секция */
 .hero-section {
-    background: linear-gradient(135deg, #F5F0E8 0%, #E8E0D0 100%);
+    background: linear-gradient(135deg, #1a1a1a 0%, #0f172a 50%, #1e293b 100%);
     padding: 80px 20px;
     position: relative;
     overflow: hidden;
@@ -102,14 +102,14 @@ body {
     font-weight: 700;
     line-height: 1.2;
     margin-bottom: 24px;
-    color: #2C2C2C;
+    color: #ffffff; /* Белый текст на темном фоне */
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     line-height: 1.6;
     margin-bottom: 32px;
-    color: #666;
+    color: rgba(255, 255, 255, 0.8); /* Полупрозрачный белый */
 }
 
 .hero-cta-group {

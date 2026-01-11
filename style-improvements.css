@@ -103,10 +103,10 @@
 .product-consultation-btn {
     display: inline-block; /* Блочно-строчный элемент */
     padding: 12px 24px; /* Внутренние отступы */
-    background-color: #D4A574; /* Золотисто-коричневый цвет фона */
+    background: linear-gradient(to right, #06b6d4, #f97316); /* Градиент cyan-to-orange */
     color: #ffffff; /* Белый цвет текста */
     text-decoration: none; /* Убирание подчеркивания */
-    border-radius: 6px; /* Скругление углов */
+    border-radius: 50px; /* Скругленные углы как в примере */
     font-weight: 600; /* Жирность шрифта */
     font-size: 0.95rem; /* Размер шрифта */
     text-align: center; /* Выравнивание по центру */
@@ -114,6 +114,7 @@
     border: none; /* Убирание границы */
     cursor: pointer; /* Указатель при наведении */
     width: 100%; /* Ширина на всю карточку */
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); /* Тень с cyan цветом */
 }
 
 /* Hover-эффект для кнопки CTA */
@@ -121,9 +122,9 @@
 .product-item .btn-cta:hover,
 .product-card .btn-cta:hover,
 .product-consultation-btn:hover {
-    background-color: #B8955A; /* Темнее при hover */
+    background: linear-gradient(to right, #0891b2, #ea580c); /* Более насыщенный градиент */
     transform: translateY(-2px); /* Легкое поднятие */
-    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3); /* Тень с цветом кнопки */
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); /* Усиленная тень */
 }
 
 /* ========================================
@@ -165,23 +166,23 @@
 .hero-cta-btn {
     display: inline-block; /* Блочно-строчный элемент */
     padding: 16px 32px; /* Внутренние отступы */
-    background-color: #D4A574; /* Золотисто-коричневый цвет */
+    background: linear-gradient(to right, #06b6d4, #f97316); /* Градиент cyan-to-orange */
     color: #ffffff; /* Белый цвет текста */
     text-decoration: none; /* Убирание подчеркивания */
-    border-radius: 8px; /* Скругление углов */
-    font-weight: 700; /* Жирность шрифта */
-    font-size: 1.1rem; /* Размер шрифта */
-    text-transform: uppercase; /* Заглавные буквы */
-    letter-spacing: 1px; /* Межбуквенный интервал */
+    border-radius: 50px; /* Полностью скругленные углы */
+    font-weight: 600; /* Жирность шрифта */
+    font-size: 1rem; /* Размер шрифта */
+    letter-spacing: 0.5px; /* Межбуквенный интервал */
     transition: all 0.3s ease; /* Плавные переходы */
-    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3); /* Тень */
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); /* Тень с cyan */
+    border: none; /* Без границы */
 }
 
 /* Hover-эффект для hero CTA кнопки */
 .hero-cta-btn:hover {
-    background-color: #B8955A; /* Темнее при hover */
-    transform: translateY(-3px); /* Поднятие */
-    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4); /* Усиление тени */
+    background: linear-gradient(to right, #0891b2, #ea580c); /* Более насыщенный градиент */
+    transform: translateY(-3px) scale(1.02); /* Поднятие и увеличение */
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); /* Усиленная тень */
 }
 
 /* Выделение телефона в шапке */
@@ -235,24 +236,25 @@
 /* Кнопка отправки формы */
 .contact-form-wrapper input[type="submit"],
 .contact-form-wrapper button[type="submit"] {
-    background-color: #D4A574; /* Золотисто-коричневый цвет */
+    background: linear-gradient(to right, #06b6d4, #f97316); /* Градиент cyan-to-orange */
     color: #ffffff; /* Белый цвет текста */
     padding: 14px 32px; /* Внутренние отступы */
     border: none; /* Убирание границы */
-    border-radius: 6px; /* Скругление углов */
+    border-radius: 50px; /* Полностью скругленные углы */
     font-weight: 600; /* Жирность шрифта */
     font-size: 1rem; /* Размер шрифта */
     cursor: pointer; /* Указатель при наведении */
     transition: all 0.3s ease; /* Плавные переходы */
     width: 100%; /* Ширина на всю форму */
+    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); /* Тень с cyan */
 }
 
 /* Hover-эффект для кнопки отправки */
 .contact-form-wrapper input[type="submit"]:hover,
 .contact-form-wrapper button[type="submit"]:hover {
-    background-color: #B8955A; /* Темнее при hover */
+    background: linear-gradient(to right, #0891b2, #ea580c); /* Более насыщенный градиент */
     transform: translateY(-2px); /* Легкое поднятие */
-    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3); /* Тень */
+    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); /* Усиленная тень */
 }
 
 /* ========================================
