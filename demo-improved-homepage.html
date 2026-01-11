@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GM WOOD - Улучшенная версия</title>
+    <link rel="stylesheet" href="style-improvements.css">
+    <style>
+        /* Базовые стили для демонстрации */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F0E8;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+        
+        /* Шапка сайта */
+        .site-header {
+            background-color: #2C2C2C;
+            color: #ffffff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .header-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .header-nav a:hover {
+            color: #D4A574;
+        }
+        
+        .header-phone {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #D4A574;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .header-phone:hover {
+            color: #B8955A;
+        }
+        
+        /* Hero-секция */
+        .hero-section {
+            background: linear-gradient(135deg, #F5F0E8 0%, #E8E0D0 100%);
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            color: #2C2C2C;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 32px;
+            color: #666;
+        }
+        
+        .hero-cta-group {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Секция "О нас" */
+        .about-section {
+            background-color: #2C2C2C;
+            color: #ffffff;
+            padding: 80px 20px;
+        }
+        
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+        }
+        
+        .about-image {
+            width: 100%;
+            border-radius: 12px;
+        }
+        
+        /* Секция продуктов */
+        .products-section {
+            background-color: #F5F0E8;
+            padding: 80px 20px;
+        }
+        
+        .products-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+            font-size: 1.1rem;
+            color: #666;
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        /* Секция "Почему GM WOOD" */
+        .why-section {
+            background-color: #2C2C2C;
+            color: #ffffff;
+            padding: 80px 20px;
+        }
+        
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .why-item {
+            text-align: center;
+            padding: 30px;
+            border: 2px solid #D4A574;
+            border-radius: 12px;
+        }
+        
+        .why-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            color: #D4A574;
+        }
+        
+        /* Форма обратной связи */
+        .contact-section {
+            background-color: #F5F0E8;
+            padding: 80px 20px;
+        }
+        
+        .contact-wrapper {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* Футер */
+        .site-footer {
+            background-color: #2C2C2C;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-container,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .header-nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="#" class="logo">GM WOOD</a>
+            <nav class="header-nav">
+                <a href="#">GALVENĀ</a>
+                <a href="#">PAR MUMS</a>
+                <a href="#">PRODUKTI</a>
+                <a href="#">KONTAKTI</a>
+                <a href="tel:+37122812424" class="header-phone">(+371) 2281 2424</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero-секция -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1>PROJEKTĒJAM RAŽOJAM IEDVESMOJAM</h1>
+                <p class="hero-subtitle">
+                    Mēs piedāvājam jums vispiemērotāko variantu, kas atbilst jūsu vajadzībām, 
+                    un nodrošinām tā ātru realizāciju, garantējot augstākās klases kvalitāti 
+                    no uzticama Latvijas ražotāja
+                </p>
+                <div class="hero-cta-group">
+                    <a href="#produkti" class="hero-cta-btn">Mūsu produkti</a>
+                    <a href="#kontakti" class="hero-cta-btn">Заказать консультацию</a>
+                </div>
+            </div>
+            <div>
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/Kubls.webp" alt="Kubls" class="hero-image">
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "О нас" -->
+    <section class="about-section">
+        <div class="section-container">
+            <h2 class="section-title">PAR MUMS</h2>
+            <div class="about-content">
+                <div>
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/06/mucveida-pirtis.webp" alt="Par mums" class="about-image">
+                </div>
+                <div class="about-text">
+                    <p>
+                        Uzņēmums GM WOOD, kura pamatdarbība ir dažāda veida pirts mucas un kublu 
+                        ražošana, kā arī zāģmateriālu tirdzniecība, savu ceļu sāka 2017. gada 29. septembrī.
+                    </p>
+                    <p>
+                        Mēs lepojamies ar savu komandu, iegūto pieredzi darbā ar koku, ar savu koksnes 
+                        materiālu ražotni, ka arī daudziem projektiem, kas tika īstenoti, balstoties uz 
+                        mūsu klientu vēlmēm. Mēs garantējam saprātīgas cenas atbilstību kvalitātei un 
+                        īsākam jūsu idejas īstenošanas laikam.
+                    </p>
+                    <a href="#par-mums" class="hero-cta-btn" style="margin-top: 20px; display: inline-block;">Vairāk par GM WOOD</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция продуктов -->
+    <section class="products-section" id="produkti">
+        <div class="section-container">
+            <h2 class="section-title" style="color: #2C2C2C;">MŪSU PRODUKTI</h2>
+            <p class="products-intro">
+                Apskatiet mūsu produktu katalogu šeit. No pirts mucām un kubliem līdz terases 
+                dēļiem un citiem produktiem.
+            </p>
+            
+            <div class="products-grid">
+                <!-- Карточка товара 1 -->
+                <div class="product-card">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/06/Apala-mucveida-pirts-2.0m-gara.webp" alt="Mucveida pirtis">
+                    <div class="product-info">
+                        <h3>Mucveida pirtis</h3>
+                        <div class="product-description">
+                            Vegli pārvietojamas, ātri uzstādāmas, ērti lietojamas un viegli kopjamas. 
+                            Nodrošina vislabāko gaisa cirkulāciju pērtuvē un ātru apkuri.
+                        </div>
+                        <div class="product-cta">
+                            <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка товара 2 -->
+                <div class="product-card">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/06/clt-sauna-scaled.webp" alt="CLT Premium pirtis">
+                    <div class="product-info">
+                        <h3>CLT Premium pirtis</h3>
+                        <div class="product-description">
+                            Sauna, kas izgatavota no CLT paneļiem, izceļas pēc visām tehniskajām 
+                            īpašībām. Modernais dizains un augsta kvalitāte.
+                        </div>
+                        <div class="product-cta">
+                            <a href="#consultation" class="btn-cta">Узнать цену</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Карточка товара 3 -->
+                <div class="product-card">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/06/Tub.webp" alt="Kubli">
+                    <div class="product-info">
+                        <h3>Kubli</h3>
+                        <div class="product-description">
+                            Ir pieejami dažādi izmēri un komplektācijas. Ar ārējām krāsnīm un integrētām. 
+                            Ideāli piemēroti atpūtai un relaksācijai.
+                        </div>
+                        <div class="product-cta">
+                            <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция "Почему GM WOOD" -->
+    <section class="why-section">
+        <div class="section-container">
+            <h2 class="section-title">KĀPĒC GM WOOD?</h2>
+            <div class="why-grid">
+                <div class="why-item">
+                    <h3>Bezmaksas konsultācija</h3>
+                    <p>Palīdzēsim jums izvēlēties pirti un izstrādāsim projektu bez papildu maksas</p>
+                </div>
+                <div class="why-item">
+                    <h3>Vieni no pirmajiem Latvijā</h3>
+                    <p>Lielākais mucu pirts ražotājs Rīgā</p>
+                </div>
+                <div class="why-item">
+                    <h3>Plašākā izvēle</h3>
+                    <p>4 dažādas formas un izmēri no 2m līdz 6m. Jaunums – CLT pirtis</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Форма обратной связи -->
+    <section class="contact-section" id="kontakti">
+        <div class="contact-wrapper">
+            <h2 class="section-title" style="color: #2C2C2C; margin-bottom: 40px;">ATSTĀT PIETEIKUMU</h2>
+            <div class="contact-form-wrapper">
+                <form>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Vārds</label>
+                        <input type="text" name="name" placeholder="Jūsu vārds" required>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">E-pasts</label>
+                        <input type="email" name="email" placeholder="jūsu@epasts.lv" required>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Telefons</label>
+                        <input type="tel" name="phone" placeholder="+371 22 81 24 24" required>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Izvēlies produktu</label>
+                        <select name="product" required style="width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem;">
+                            <option value="">Izvēlieties...</option>
+                            <option value="mucveida-pirtis">Mucveida pirtis</option>
+                            <option value="clt-pirtis">Pirts no CLT paneliem</option>
+                            <option value="kubli">Kubli</option>
+                            <option value="piederumi">Pirts piederumi</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Jūsu ziņojums</label>
+                        <textarea name="message" rows="5" placeholder="Jūsu ziņojums..." style="width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit">Sūtīt pieteikumu</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Футер -->
+    <footer class="site-footer">
+        <p>© GM WOOD. Visas tiesības aizsargātas</p>
+    </footer>
+
+    <!-- Плавающая кнопка с телефоном -->
+    <a href="tel:+37122812424" class="floating-phone-btn" title="Позвонить нам">
+        <svg fill="currentColor" viewBox="0 0 24 24" style="width: 32px; height: 32px;">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+    </a>
+</body>
+</html>

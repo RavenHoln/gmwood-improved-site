@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Улучшенные карточки товаров - GM WOOD</title>
+    <link rel="stylesheet" href="style-improvements.css">
+    <style>
+        /* Базовые стили для демонстрации */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F5F0E8;
+            padding: 40px 20px;
+            margin: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h2 {
+            color: #2C2C2C;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Улучшенные карточки товаров</h2>
+        
+        <!-- Пример улучшенной карточки товара 1 -->
+        <div class="products-grid">
+            <div class="product-card">
+                <!-- Изображение товара -->
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/Apala-mucveida-pirts-2.0m-gara.webp" alt="Apaļā mucveida pirts">
+                
+                <!-- Информация о товаре -->
+                <div class="product-info">
+                    <!-- Заголовок товара -->
+                    <h3>Apaļā mucveida pirts</h3>
+                    
+                    <!-- Описание товара (новое поле для SEO и информации) -->
+                    <div class="product-description">
+                        Vegli pārvietojamas, ātri uzstādāmas, ērti lietojamas un viegli kopjamas. 
+                        Nodrošina vislabāko gaisa cirkulāciju pērtuvē un ātru apkuri.
+                    </div>
+                    
+                    <!-- Кнопка призыва к действию -->
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пример улучшенной карточки товара 2 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/clt-sauna-scaled.webp" alt="CLT Premium pirtis">
+                <div class="product-info">
+                    <h3>CLT Premium pirtis</h3>
+                    <div class="product-description">
+                        Sauna, kas izgatavota no CLT paneļiem, izceļas pēc visām tehniskajām īpašībām. 
+                        Modernais dizains un augsta kvalitāte.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Узнать цену</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Пример улучшенной карточки товара 3 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/Tub.webp" alt="Kubli">
+                <div class="product-info">
+                    <h3>Kubli</h3>
+                    <div class="product-description">
+                        Ir pieejami dažādi izmēri un komplektācijas. Ar ārējām krāsnīm un integrētām. 
+                        Ideāli piemēroti atpūtai un relaksācijai.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Пример плавающей кнопки с телефоном -->
+        <a href="tel:+37122812424" class="floating-phone-btn" title="Позвонить нам">
+            <svg fill="currentColor" viewBox="0 0 24 24">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+        </a>
+
+        <!-- Пример улучшенной формы обратной связи -->
+        <div class="contact-form-wrapper">
+            <h3>Оставить заявку</h3>
+            <form>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Имя</label>
+                    <input type="text" name="name" placeholder="Ваше имя" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">E-mail</label>
+                    <input type="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Телефон</label>
+                    <input type="tel" name="phone" placeholder="+371 22 81 24 24" required>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Сообщение</label>
+                    <textarea name="message" rows="5" placeholder="Ваше сообщение"></textarea>
+                </div>
+                <button type="submit">Отправить заявку</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

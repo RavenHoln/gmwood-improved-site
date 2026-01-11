@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Продукты - GM WOOD (Улучшенная версия)</title>
+    <link rel="stylesheet" href="style-improvements.css">
+    <style>
+        /* Базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F5F0E8;
+            color: #2C2C2C;
+            line-height: 1.6;
+        }
+        
+        /* Шапка */
+        .site-header {
+            background-color: #2C2C2C;
+            color: #ffffff;
+            padding: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        
+        .header-nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .header-nav a {
+            color: #ffffff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .header-nav a:hover {
+            color: #D4A574;
+        }
+        
+        .header-phone {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #D4A574;
+            text-decoration: none;
+        }
+        
+        /* Основной контент */
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2C2C2C;
+        }
+        
+        .page-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 60px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Сетка продуктов */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+        }
+        
+        /* SEO-текст для категории */
+        .category-seo-text {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-seo-text h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2C2C2C;
+        }
+        
+        .category-seo-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 16px;
+        }
+        
+        /* Футер */
+        .site-footer {
+            background-color: #2C2C2C;
+            color: #ffffff;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .page-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="demo-improved-homepage.html" class="logo">GM WOOD</a>
+            <nav class="header-nav">
+                <a href="demo-improved-homepage.html">GALVENĀ</a>
+                <a href="#">PAR MUMS</a>
+                <a href="demo-improved-products.html" style="color: #D4A574;">PRODUKTI</a>
+                <a href="#">KONTAKTI</a>
+                <a href="tel:+37122812424" class="header-phone">(+371) 2281 2424</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="main-content">
+        <h1 class="page-title">MŪSU PRODUKTI</h1>
+        <p class="page-description">
+            Apskatiet mūsu produktu katalogu šeit. No pirts mucām un kubliem līdz terases 
+            dēļiem un citiem produktiem.
+        </p>
+
+        <!-- SEO-текст для категории -->
+        <div class="category-seo-text">
+            <h2>Mucveida pirtis - Tradicionālā latviešu kvalitāte</h2>
+            <p>
+                Mucveida pirtis ir perfektais risinājums tiem, kas vēlas izbaudīt tradicionālo 
+                latviešu pirts ritualu savā dārzā. GM WOOD piedāvā dažāda veida mucveida pirtis, 
+                kas izgatavotas no augstas kvalitātes kokmateriāliem un ir piemērotas gan pastāvīgai, 
+                gan pārvietojamai uzstādīšanai.
+            </p>
+            <p>
+                Mūsu mucveida pirtis ir vegli pārvietojamas, ātri uzstādāmas, ērti lietojamas un 
+                viegli kopjamas. Katra pirts ir izgatavota ar mīlestību un rūpību, garantējot 
+                ilgmūžību un augstu kvalitāti.
+            </p>
+            <p>
+                Visas mūsu mucveida pirtis ir pieejamas dažādos izmēros no 2m līdz 6m garumā. 
+                Mēs piedāvājam arī dažādas komplektācijas un konfigurācijas, piemēram, ar terasi, 
+                priekštelpu vai pērtuvi.
+            </p>
+        </div>
+
+        <!-- Сетка продуктов -->
+        <div class="products-grid">
+            <!-- Карточка товара 1 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/Apala-mucveida-pirts-2.0m-gara.webp" alt="Apaļā mucveida pirts">
+                <div class="product-info">
+                    <h3>Apaļā mucveida pirts</h3>
+                    <div class="product-description">
+                        Vegli pārvietojamas, ātri uzstādāmas, ērti lietojamas un viegli kopjamas. 
+                        Apaļā mucveida pirts nodrošina vislabāko gaisa cirkulāciju pērtuvē, ātru apkuri 
+                        mazāka telpas tilpuma dēļ un ir domāta tiem, kuri augsti novērtē apaļumus savā dzīvē.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка товара 2 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/olas-formas-mucveida-pirts.webp" alt="Olas formas mucveida pirts">
+                <div class="product-info">
+                    <h3>"Olas" formas mucveida pirts</h3>
+                    <div class="product-description">
+                        Unikāla "olas" formas mucveida pirts ar stilīgu dizainu. Ideāli piemērota 
+                        mazākiem telpām, bet saglabā visas priekšrocības mucveida pirts. 
+                        Vegli pārvietojama un ātri uzstādāma.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Узнать цену</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка товара 3 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/ovala-mucveida-pirts-2.webp" alt="Ovālā mucveida pirts">
+                <div class="product-info">
+                    <h3>Ovālā mucveida pirts</h3>
+                    <div class="product-description">
+                        Ovālā forma nodrošina ērtāku telpas izmantošanu. Ideāli piemērota 
+                        2-4 personām. Vegli pārvietojama, ātri uzstādāma un viegli kopjama. 
+                        Modernais dizains, kas piemērots jebkuram dārzam.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка товара 4 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/kantaina-mucveida-pirts.webp" alt="Kantainā mucveida pirts">
+                <div class="product-info">
+                    <h3>Kantainā mucveida pirts</h3>
+                    <div class="product-description">
+                        Kantainā mucveida pirts apvieno tradicionālo mucveida pirts estētiku ar 
+                        praktiskumu. Taisnstūra forma ļauj efektīvāk izmantot telpu. 
+                        Vegli pārvietojama un uzstādāma.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка товара 5 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/clt-sauna-scaled.webp" alt="CLT Premium pirtis">
+                <div class="product-info">
+                    <h3>Pirts no CLT paneliem</h3>
+                    <div class="product-description">
+                        Premium sauna, kas izgatavota no CLT paneļiem. Izceļas pēc visām tehniskajām 
+                        īpašībām un ilgmūžību. Modernais dizains un augsta kvalitāte. 
+                        Ideāli piemērota pastāvīgai uzstādīšanai.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Узнать цену</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка товара 6 -->
+            <div class="product-card">
+                <img src="https://gmwood.lv/wp-content/uploads/2023/06/Tub.webp" alt="Kubli">
+                <div class="product-info">
+                    <h3>Kubli</h3>
+                    <div class="product-description">
+                        Ir pieejami dažādi izmēri un komplektācijas. Ar ārējām krāsnīm un integrētām. 
+                        Ideāli piemēroti atpūtai un relaksācijai jebkurā dārzā. 
+                        Vegli uzstādāmas un viegli kopjamas.
+                    </div>
+                    <div class="product-cta">
+                        <a href="#consultation" class="btn-cta">Заказать консультацию</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="site-footer">
+        <p>© GM WOOD. Visas tiesības aizsargātas</p>
+    </footer>
+
+    <!-- Плавающая кнопка с телефоном -->
+    <a href="tel:+37122812424" class="floating-phone-btn" title="Позвонить нам">
+        <svg fill="currentColor" viewBox="0 0 24 24" style="width: 32px; height: 32px;">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+    </a>
+</body>
+</html>
