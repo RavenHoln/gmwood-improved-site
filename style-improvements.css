@@ -41,6 +41,12 @@
     transition: transform 0.3s ease; /* Плавное изменение масштаба */
 }
 
+/* Ссылка вокруг изображения */
+.product-card > a {
+    display: block;
+    text-decoration: none;
+}
+
 /* Масштабирование изображения при hover */
 .woocommerce ul.products li.product:hover img,
 .product-item:hover img,
