@@ -1,0 +1,4 @@
+# Netlify configuration file
+# Статический сайт - не требует сборки
+[build]
+  publish = "."

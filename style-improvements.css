@@ -1,0 +1,303 @@
+/* ========================================
+   Улучшения для сайта GM WOOD
+   Принцип 80/20 - максимальный эффект при минимальных изменениях
+   ======================================== */
+
+/* ========================================
+   1. УЛУЧШЕНИЕ КАРТОЧЕК ТОВАРОВ
+   ======================================== */
+
+/* Стили для карточек товаров - добавляют описания и CTA */
+.woocommerce ul.products li.product,
+.product-item,
+.product-card {
+    position: relative; /* Позиционирование для hover-эффектов */
+    background: #ffffff; /* Белый фон карточки */
+    border-radius: 12px; /* Скругление углов */
+    overflow: hidden; /* Скрытие переполнения для скругления */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Тень для глубины */
+    transition: all 0.3s ease; /* Плавные переходы для всех свойств */
+    display: flex; /* Flexbox для вертикального размещения */
+    flex-direction: column; /* Вертикальное направление */
+}
+
+/* Hover-эффект для карточек товаров */
+.woocommerce ul.products li.product:hover,
+.product-item:hover,
+.product-card:hover {
+    transform: translateY(-5px); /* Поднятие карточки при наведении */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15); /* Усиление тени при hover */
+}
+
+/* Изображение товара в карточке */
+.woocommerce ul.products li.product img,
+.product-item img,
+.product-card img {
+    width: 100%; /* Ширина на всю карточку */
+    height: 250px; /* Фиксированная высота для одинакового размера */
+    object-fit: cover; /* Обрезка изображения с сохранением пропорций */
+    object-position: center; /* Центрирование изображения */
+    display: block; /* Блочный элемент */
+    transition: transform 0.3s ease; /* Плавное изменение масштаба */
+}
+
+/* Масштабирование изображения при hover */
+.woocommerce ul.products li.product:hover img,
+.product-item:hover img,
+.product-card:hover img {
+    transform: scale(1.05); /* Увеличение изображения на 5% */
+}
+
+/* Контейнер для текстовой информации в карточке */
+.woocommerce ul.products li.product .product-info,
+.product-item .product-info,
+.product-card .product-info {
+    padding: 20px; /* Внутренние отступы */
+    flex-grow: 1; /* Заполнение доступного пространства */
+    display: flex; /* Flexbox */
+    flex-direction: column; /* Вертикальное направление */
+}
+
+/* Заголовок товара в карточке */
+.woocommerce ul.products li.product h2,
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
+.product-item h2,
+.product-item h3,
+.product-card h2,
+.product-card h3 {
+    font-size: 1.25rem; /* Размер шрифта */
+    font-weight: 600; /* Жирность шрифта */
+    margin-bottom: 12px; /* Отступ снизу */
+    color: #2C2C2C; /* Темно-серый цвет текста */
+    line-height: 1.4; /* Межстрочный интервал */
+}
+
+/* Описание товара в карточке (новое поле) */
+.woocommerce ul.products li.product .product-description,
+.product-item .product-description,
+.product-card .product-description {
+    font-size: 0.9rem; /* Размер шрифта */
+    color: #666; /* Серый цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin-bottom: 16px; /* Отступ снизу */
+    flex-grow: 1; /* Заполнение пространства */
+}
+
+/* Контейнер для кнопки CTA */
+.woocommerce ul.products li.product .product-cta,
+.product-item .product-cta,
+.product-card .product-cta {
+    margin-top: auto; /* Прижимание к низу */
+}
+
+/* Кнопка призыва к действию в карточке товара */
+.woocommerce ul.products li.product .btn-cta,
+.product-item .btn-cta,
+.product-card .btn-cta,
+.product-consultation-btn {
+    display: inline-block; /* Блочно-строчный элемент */
+    padding: 12px 24px; /* Внутренние отступы */
+    background-color: #D4A574; /* Золотисто-коричневый цвет фона */
+    color: #ffffff; /* Белый цвет текста */
+    text-decoration: none; /* Убирание подчеркивания */
+    border-radius: 6px; /* Скругление углов */
+    font-weight: 600; /* Жирность шрифта */
+    font-size: 0.95rem; /* Размер шрифта */
+    text-align: center; /* Выравнивание по центру */
+    transition: all 0.3s ease; /* Плавные переходы */
+    border: none; /* Убирание границы */
+    cursor: pointer; /* Указатель при наведении */
+    width: 100%; /* Ширина на всю карточку */
+}
+
+/* Hover-эффект для кнопки CTA */
+.woocommerce ul.products li.product .btn-cta:hover,
+.product-item .btn-cta:hover,
+.product-card .btn-cta:hover,
+.product-consultation-btn:hover {
+    background-color: #B8955A; /* Темнее при hover */
+    transform: translateY(-2px); /* Легкое поднятие */
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3); /* Тень с цветом кнопки */
+}
+
+/* ========================================
+   2. ПРИЗЫВЫ К ДЕЙСТВИЮ (CTA)
+   ======================================== */
+
+/* Плавающая кнопка с телефоном */
+.floating-phone-btn {
+    position: fixed; /* Фиксированное позиционирование */
+    bottom: 30px; /* Отступ снизу */
+    right: 30px; /* Отступ справа */
+    width: 64px; /* Ширина кнопки */
+    height: 64px; /* Высота кнопки */
+    background-color: #25D366; /* Цвет WhatsApp (зеленый) */
+    border-radius: 50%; /* Круглая форма */
+    display: flex; /* Flexbox для центрирования */
+    align-items: center; /* Выравнивание по центру */
+    justify-content: center; /* Выравнивание по центру */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); /* Тень */
+    z-index: 9999; /* Поверх всех элементов */
+    transition: all 0.3s ease; /* Плавные переходы */
+    text-decoration: none; /* Убирание подчеркивания */
+    color: #ffffff; /* Белый цвет иконки */
+}
+
+/* Hover-эффект для плавающей кнопки */
+.floating-phone-btn:hover {
+    transform: scale(1.1); /* Увеличение при hover */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4); /* Усиление тени */
+}
+
+/* Иконка телефона в плавающей кнопке */
+.floating-phone-btn svg {
+    width: 32px; /* Ширина иконки */
+    height: 32px; /* Высота иконки */
+}
+
+/* Кнопка "Заказать консультацию" в hero-секции */
+.hero-cta-btn {
+    display: inline-block; /* Блочно-строчный элемент */
+    padding: 16px 32px; /* Внутренние отступы */
+    background-color: #D4A574; /* Золотисто-коричневый цвет */
+    color: #ffffff; /* Белый цвет текста */
+    text-decoration: none; /* Убирание подчеркивания */
+    border-radius: 8px; /* Скругление углов */
+    font-weight: 700; /* Жирность шрифта */
+    font-size: 1.1rem; /* Размер шрифта */
+    text-transform: uppercase; /* Заглавные буквы */
+    letter-spacing: 1px; /* Межбуквенный интервал */
+    transition: all 0.3s ease; /* Плавные переходы */
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3); /* Тень */
+}
+
+/* Hover-эффект для hero CTA кнопки */
+.hero-cta-btn:hover {
+    background-color: #B8955A; /* Темнее при hover */
+    transform: translateY(-3px); /* Поднятие */
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4); /* Усиление тени */
+}
+
+/* Выделение телефона в шапке */
+.header-phone {
+    font-weight: 700; /* Жирность шрифта */
+    font-size: 1.1rem; /* Размер шрифта */
+    color: #D4A574; /* Золотисто-коричневый цвет */
+    text-decoration: none; /* Убирание подчеркивания */
+    transition: color 0.3s ease; /* Плавное изменение цвета */
+}
+
+/* Hover-эффект для телефона в шапке */
+.header-phone:hover {
+    color: #B8955A; /* Темнее при hover */
+}
+
+/* ========================================
+   3. УЛУЧШЕНИЕ ФОРМЫ ОБРАТНОЙ СВЯЗИ
+   ======================================== */
+
+/* Контейнер формы обратной связи */
+.contact-form-wrapper {
+    background: #ffffff; /* Белый фон */
+    padding: 40px; /* Внутренние отступы */
+    border-radius: 12px; /* Скругление углов */
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Поля формы */
+.contact-form-wrapper input[type="text"],
+.contact-form-wrapper input[type="email"],
+.contact-form-wrapper input[type="tel"],
+.contact-form-wrapper textarea,
+.contact-form-wrapper select {
+    width: 100%; /* Ширина на всю форму */
+    padding: 12px 16px; /* Внутренние отступы */
+    border: 2px solid #e0e0e0; /* Светло-серая граница */
+    border-radius: 6px; /* Скругление углов */
+    font-size: 1rem; /* Размер шрифта */
+    transition: border-color 0.3s ease; /* Плавное изменение цвета границы */
+}
+
+/* Focus-эффект для полей формы */
+.contact-form-wrapper input:focus,
+.contact-form-wrapper textarea:focus,
+.contact-form-wrapper select:focus {
+    outline: none; /* Убирание стандартного outline */
+    border-color: #D4A574; /* Золотисто-коричневая граница при focus */
+}
+
+/* Кнопка отправки формы */
+.contact-form-wrapper input[type="submit"],
+.contact-form-wrapper button[type="submit"] {
+    background-color: #D4A574; /* Золотисто-коричневый цвет */
+    color: #ffffff; /* Белый цвет текста */
+    padding: 14px 32px; /* Внутренние отступы */
+    border: none; /* Убирание границы */
+    border-radius: 6px; /* Скругление углов */
+    font-weight: 600; /* Жирность шрифта */
+    font-size: 1rem; /* Размер шрифта */
+    cursor: pointer; /* Указатель при наведении */
+    transition: all 0.3s ease; /* Плавные переходы */
+    width: 100%; /* Ширина на всю форму */
+}
+
+/* Hover-эффект для кнопки отправки */
+.contact-form-wrapper input[type="submit"]:hover,
+.contact-form-wrapper button[type="submit"]:hover {
+    background-color: #B8955A; /* Темнее при hover */
+    transform: translateY(-2px); /* Легкое поднятие */
+    box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3); /* Тень */
+}
+
+/* ========================================
+   4. ДОПОЛНИТЕЛЬНЫЕ УЛУЧШЕНИЯ
+   ======================================== */
+
+/* Улучшение hero-секции */
+.hero-section {
+    position: relative; /* Относительное позиционирование */
+}
+
+/* Контейнер для текста в hero-секции */
+.hero-content {
+    position: relative; /* Относительное позиционирование */
+    z-index: 2; /* Поверх изображения */
+}
+
+/* Заголовок hero-секции */
+.hero-section h1 {
+    font-size: 2.5rem; /* Большой размер шрифта */
+    font-weight: 700; /* Жирность шрифта */
+    line-height: 1.2; /* Межстрочный интервал */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+/* Подзаголовок hero-секции */
+.hero-section .hero-subtitle {
+    font-size: 1.2rem; /* Размер шрифта */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin-bottom: 30px; /* Отступ снизу */
+    color: #666; /* Серый цвет текста */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    /* Уменьшение размера плавающей кнопки на мобильных */
+    .floating-phone-btn {
+        width: 56px; /* Меньшая ширина */
+        height: 56px; /* Меньшая высота */
+        bottom: 20px; /* Меньший отступ */
+        right: 20px; /* Меньший отступ */
+    }
+    
+    /* Уменьшение размера hero-заголовка на мобильных */
+    .hero-section h1 {
+        font-size: 2rem; /* Меньший размер */
+    }
+    
+    /* Вертикальное размещение кнопок на мобильных */
+    .hero-cta-btn {
+        width: 100%; /* Ширина на всю ширину */
+        margin-bottom: 10px; /* Отступ снизу */
+    }
+}

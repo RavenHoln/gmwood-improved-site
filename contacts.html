@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakti - GM WOOD</title>
+    <meta name="description" content="Sazinieties ar GM WOOD - Latvijas ražotāju mucveida pirtis un kubliem.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-improvements.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/gmwood-logo.webp" alt="GM WOOD" onerror="this.src='https://gmwood.lv/wp-content/uploads/2023/06/cropped-gmwoodlogowhite-1.webp'; this.onerror=null;">
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">GALVENĀ</a>
+                <a href="about.html">PAR MUMS</a>
+                <a href="products.html">PRODUKTI</a>
+                <a href="contacts.html" class="active">KONTAKTI</a>
+                <a href="tel:+37122812424" class="header-phone">(+371) 2281 2424</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="page-content">
+        <h1>KONTAKTI</h1>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 60px;">
+            <!-- Контактная информация -->
+            <div style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <h2 style="color: #2C2C2C; margin-bottom: 30px;">Kontakti</h2>
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 600; color: #2C2C2C; margin-bottom: 8px;">Telefons:</p>
+                    <a href="tel:+37122812424" style="font-size: 1.2rem; color: #D4A574; text-decoration: none; font-weight: 700;">(+371) 2281 2424</a>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 600; color: #2C2C2C; margin-bottom: 8px;">E-pasts:</p>
+                    <a href="mailto:es@gmwood.lv" style="font-size: 1.1rem; color: #D4A574; text-decoration: none;">es@gmwood.lv</a>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p style="font-weight: 600; color: #2C2C2C; margin-bottom: 15px;">Sekojiet mums:</p>
+                    <div style="display: flex; gap: 15px;">
+                        <a href="https://www.facebook.com/gmwood.eu" target="_blank" style="color: #D4A574; text-decoration: none; font-weight: 600;">Facebook</a>
+                        <a href="https://www.instagram.com/gmwood.eu/" target="_blank" style="color: #D4A574; text-decoration: none; font-weight: 600;">Instagram</a>
+                        <a href="https://api.whatsapp.com/send/?phone=37122812424" target="_blank" style="color: #D4A574; text-decoration: none; font-weight: 600;">WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Адрес -->
+            <div style="background-color: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);">
+                <h2 style="color: #2C2C2C; margin-bottom: 30px;">Brauc ciemos</h2>
+                <div style="margin-bottom: 20px;">
+                    <p style="font-weight: 600; color: #2C2C2C; margin-bottom: 8px;">Adrese:</p>
+                    <p style="font-size: 1.1rem; color: #666;">Rīga, Latgales iela 444E</p>
+                    <a href="https://www.waze.com/ru/live-map/directions/riga?navigate=yes&to=place.ws.row.11451989.444" target="_blank" style="color: #D4A574; text-decoration: none; font-weight: 600; display: inline-block; margin-top: 10px;">Atvērt WAZE →</a>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p style="font-weight: 600; color: #2C2C2C; margin-bottom: 15px;">Darba laiks:</p>
+                    <p style="color: #666; margin-bottom: 8px;">Pm.- Pk. 9:00-17:00</p>
+                    <p style="color: #666; font-size: 0.9rem;">(zvaniet pirms braukšanas)</p>
+                    <p style="color: #666; margin-top: 15px;">S.- Pēc vienošanās</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Форма обратной связи -->
+        <div style="margin-top: 80px;">
+            <h2 style="text-align: center; color: #2C2C2C; margin-bottom: 40px;">ATSTĀT PIETEIKUMU</h2>
+            <div class="contact-form-wrapper">
+                <form id="contact-form" onsubmit="return false;">
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Vārds</label>
+                        <input type="text" name="name" placeholder="Jūsu vārds" required>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">E-pasts</label>
+                        <input type="email" name="email" placeholder="jūsu@epasts.lv" required>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Telefons</label>
+                        <input type="tel" name="phone" placeholder="+371 22 81 24 24" required>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Izvēlies produktu</label>
+                        <select name="product" required style="width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem;">
+                            <option value="">Izvēlieties...</option>
+                            <option value="mucveida-pirtis">Mucveida pirtis</option>
+                            <option value="clt-pirtis">Pirts no CLT paneliem</option>
+                            <option value="kubli">Kubli</option>
+                            <option value="piederumi">Pirts piederumi</option>
+                        </select>
+                    </div>
+                    <div style="margin-bottom: 24px;">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600; color: #2C2C2C;">Jūsu ziņojums</label>
+                        <textarea name="message" rows="5" placeholder="Jūsu ziņojums..." style="width: 100%; padding: 12px 16px; border: 2px solid #e0e0e0; border-radius: 6px; font-size: 1rem; font-family: inherit;"></textarea>
+                    </div>
+                    <button type="submit">Sūtīt pieteikumu</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер -->
+    <footer class="site-footer">
+        <p>© GM WOOD. Visas tiesības aizsargātas</p>
+    </footer>
+
+    <!-- Плавающая кнопка с телефоном -->
+    <a href="tel:+37122812424" class="floating-phone-btn" title="Позвонить нам">
+        <svg fill="currentColor" viewBox="0 0 24 24" style="width: 32px; height: 32px;">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+    </a>
+</body>
+</html>
