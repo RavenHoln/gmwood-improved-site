@@ -1,0 +1,193 @@
+/* ========================================
+   Badge-style Buttons - Адаптация React Badge компонента
+   ======================================== */
+
+/* Базовые стили для badge-кнопок */
+.badge-btn {
+    display: inline-flex; /* Инлайн-flex для выравнивания */
+    align-items: center; /* Выравнивание по центру */
+    border-radius: 9999px; /* Полностью скругленные углы */
+    font-weight: 500; /* Средняя жирность */
+    transition: all 0.2s ease; /* Плавные переходы */
+    border: 1px solid transparent; /* Прозрачная граница по умолчанию */
+    cursor: pointer; /* Указатель при наведении */
+    text-decoration: none; /* Без подчеркивания */
+    outline: none; /* Убираем outline */
+    position: relative; /* Относительное позиционирование */
+}
+
+/* Фокус состояние */
+.badge-btn:focus {
+    outline: 2px solid rgba(6, 182, 212, 0.5); /* Cyan outline */
+    outline-offset: 2px; /* Отступ outline */
+}
+
+/* Варианты badge-кнопок */
+
+/* Default вариант */
+.badge-btn-default {
+    background: rgba(107, 114, 128, 0.1); /* Серый фон с прозрачностью */
+    color: #374151; /* Темно-серый текст */
+    border-color: rgba(107, 114, 128, 0.2); /* Серый border */
+}
+
+.badge-btn-default:hover {
+    background: rgba(107, 114, 128, 0.15); /* Более темный фон */
+    border-color: rgba(107, 114, 128, 0.3); /* Более темный border */
+}
+
+/* Warning вариант (orange) */
+.badge-btn-warning {
+    background: rgba(249, 115, 22, 0.1); /* Orange фон с прозрачностью */
+    color: #ea580c; /* Orange текст */
+    border-color: rgba(249, 115, 22, 0.3); /* Orange border */
+}
+
+.badge-btn-warning:hover {
+    background: rgba(249, 115, 22, 0.2); /* Более темный фон */
+    border-color: rgba(249, 115, 22, 0.4); /* Более темный border */
+}
+
+/* Success вариант (cyan/green) */
+.badge-btn-success {
+    background: rgba(6, 182, 212, 0.1); /* Cyan фон с прозрачностью */
+    color: #0891b2; /* Cyan текст */
+    border-color: rgba(6, 182, 212, 0.3); /* Cyan border */
+}
+
+.badge-btn-success:hover {
+    background: rgba(6, 182, 212, 0.2); /* Более темный фон */
+    border-color: rgba(6, 182, 212, 0.4); /* Более темный border */
+}
+
+/* Destructive вариант (красный) */
+.badge-btn-destructive {
+    background: rgba(239, 68, 68, 0.1); /* Красный фон с прозрачностью */
+    color: #dc2626; /* Красный текст */
+    border-color: rgba(239, 68, 68, 0.3); /* Красный border */
+}
+
+.badge-btn-destructive:hover {
+    background: rgba(239, 68, 68, 0.2); /* Более темный фон */
+    border-color: rgba(239, 68, 68, 0.4); /* Более темный border */
+}
+
+/* Brand вариант (cyan-orange gradient) */
+.badge-btn-brand {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(249, 115, 22, 0.1)); /* Градиент фон */
+    color: #0891b2; /* Cyan текст */
+    border-color: rgba(6, 182, 212, 0.3); /* Cyan border */
+}
+
+.badge-btn-brand:hover {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.2), rgba(249, 115, 22, 0.2)); /* Более темный градиент */
+    border-color: rgba(6, 182, 212, 0.4); /* Более темный border */
+}
+
+/* Secondary вариант */
+.badge-btn-secondary {
+    background: rgba(156, 163, 175, 0.1); /* Серый фон с прозрачностью */
+    color: #6b7280; /* Серый текст */
+    border-color: rgba(156, 163, 175, 0.3); /* Серый border */
+}
+
+.badge-btn-secondary:hover {
+    background: rgba(156, 163, 175, 0.2); /* Более темный фон */
+    border-color: rgba(156, 163, 175, 0.4); /* Более темный border */
+}
+
+/* Outline вариант */
+.badge-btn-outline {
+    background: transparent; /* Прозрачный фон */
+    color: #374151; /* Темно-серый текст */
+    border-color: rgba(107, 114, 128, 0.3); /* Серый border */
+}
+
+.badge-btn-outline:hover {
+    background: rgba(107, 114, 128, 0.05); /* Легкий фон */
+    border-color: rgba(107, 114, 128, 0.5); /* Более темный border */
+}
+
+/* Размеры badge-кнопок */
+
+/* Small размер */
+.badge-btn-small {
+    padding: 4px 8px; /* Маленькие отступы */
+    font-size: 0.75rem; /* Маленький размер шрифта (12px) */
+    line-height: 1; /* Высота строки */
+}
+
+/* Default размер */
+.badge-btn-default-size {
+    padding: 4px 10px; /* Средние отступы */
+    font-size: 0.875rem; /* Средний размер шрифта (14px) */
+    line-height: 1.25; /* Высота строки */
+}
+
+/* Large размер */
+.badge-btn-large {
+    padding: 8px 12px; /* Большие отступы */
+    font-size: 0.875rem; /* Средний размер шрифта (14px) */
+    line-height: 1.25; /* Высота строки */
+}
+
+/* С dot (точка перед текстом) */
+.badge-btn-dot {
+    padding-left: 6px; /* Дополнительный отступ слева */
+}
+
+.badge-btn-dot::before {
+    content: ''; /* Пустой контент */
+    display: inline-block; /* Инлайн-блок */
+    width: 8px; /* Ширина точки */
+    height: 8px; /* Высота точки */
+    border-radius: 50%; /* Круглая форма */
+    background: currentColor; /* Цвет как у текста */
+    margin-right: 6px; /* Отступ справа */
+    vertical-align: middle; /* Выравнивание по центру */
+}
+
+/* С иконкой */
+.badge-btn-icon {
+    display: inline-flex; /* Инлайн-flex */
+    align-items: center; /* Выравнивание по центру */
+    gap: 6px; /* Расстояние между иконкой и текстом */
+}
+
+.badge-btn-icon svg,
+.badge-btn-icon .icon {
+    width: 14px; /* Ширина иконки */
+    height: 14px; /* Высота иконки */
+    flex-shrink: 0; /* Не сжимать */
+}
+
+/* Комбинированные классы для кнопок CTA */
+.btn-cta.badge-style {
+    border-radius: 9999px; /* Полностью скругленные углы */
+    font-weight: 500; /* Средняя жирность */
+}
+
+/* Применение badge стилей к существующим кнопкам */
+.btn-cta.badge-success {
+    background: rgba(6, 182, 212, 0.1); /* Cyan фон */
+    color: #0891b2; /* Cyan текст */
+    border: 1px solid rgba(6, 182, 212, 0.3); /* Cyan border */
+}
+
+.btn-cta.badge-success:hover {
+    background: rgba(6, 182, 212, 0.2); /* Более темный фон */
+    border-color: rgba(6, 182, 212, 0.4); /* Более темный border */
+    transform: translateY(-2px); /* Легкое поднятие */
+}
+
+/* Для hero кнопок - можно использовать gradient вариант */
+.hero-cta-btn.badge-brand {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(249, 115, 22, 0.15)); /* Градиент фон */
+    border: 1px solid rgba(6, 182, 212, 0.3); /* Cyan border */
+    color: #0891b2; /* Cyan текст */
+}
+
+.hero-cta-btn.badge-brand:hover {
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(249, 115, 22, 0.25)); /* Более темный градиент */
+    border-color: rgba(6, 182, 212, 0.4); /* Более темный border */
+}

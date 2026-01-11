@@ -96,25 +96,27 @@
     margin-top: auto; /* Прижимание к низу */
 }
 
-/* Кнопка призыва к действию в карточке товара */
+/* Кнопка призыва к действию в карточке товара - стиль badge */
 .woocommerce ul.products li.product .btn-cta,
 .product-item .btn-cta,
 .product-card .btn-cta,
 .product-consultation-btn {
-    display: inline-block; /* Блочно-строчный элемент */
-    padding: 12px 24px; /* Внутренние отступы */
-    background: linear-gradient(to right, #06b6d4, #f97316); /* Градиент cyan-to-orange */
-    color: #ffffff; /* Белый цвет текста */
+    display: inline-flex; /* Инлайн-flex для badge стиля */
+    align-items: center; /* Выравнивание по центру */
+    justify-content: center; /* Выравнивание по центру */
+    padding: 10px 20px; /* Внутренние отступы */
+    background: rgba(6, 182, 212, 0.1); /* Cyan фон с прозрачностью (badge стиль) */
+    color: #0891b2; /* Cyan текст */
     text-decoration: none; /* Убирание подчеркивания */
-    border-radius: 50px; /* Скругленные углы как в примере */
-    font-weight: 600; /* Жирность шрифта */
-    font-size: 0.95rem; /* Размер шрифта */
+    border-radius: 9999px; /* Полностью скругленные углы (badge стиль) */
+    font-weight: 500; /* Средняя жирность (badge стиль) */
+    font-size: 0.875rem; /* Размер шрифта (14px) */
     text-align: center; /* Выравнивание по центру */
-    transition: all 0.3s ease; /* Плавные переходы */
-    border: none; /* Убирание границы */
+    transition: all 0.2s ease; /* Плавные переходы */
+    border: 1px solid rgba(6, 182, 212, 0.3); /* Cyan border */
     cursor: pointer; /* Указатель при наведении */
     width: 100%; /* Ширина на всю карточку */
-    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); /* Тень с cyan цветом */
+    box-shadow: none; /* Без тени (badge стиль) */
 }
 
 /* Hover-эффект для кнопки CTA */
@@ -122,9 +124,9 @@
 .product-item .btn-cta:hover,
 .product-card .btn-cta:hover,
 .product-consultation-btn:hover {
-    background: linear-gradient(to right, #0891b2, #ea580c); /* Более насыщенный градиент */
-    transform: translateY(-2px); /* Легкое поднятие */
-    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); /* Усиленная тень */
+    background: rgba(6, 182, 212, 0.2); /* Более темный фон */
+    border-color: rgba(6, 182, 212, 0.4); /* Более темный border */
+    transform: translateY(-1px); /* Легкое поднятие */
 }
 
 /* ========================================
