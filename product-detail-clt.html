@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"Olas" formas mucveida pirts - GM WOOD</title>
+    <meta name="description" content="Unikāla 'olas' formas mucveida pirts ar stilīgu dizainu. Pieejami dažādi izmēri un komplektācijas.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style-improvements.css">
+    <style>
+        /* Стили для детальной страницы товара */
+        .product-detail-page {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .breadcrumbs {
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .breadcrumbs a {
+            color: #D4A574;
+            text-decoration: none;
+        }
+        
+        .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+        
+        .product-detail-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+        }
+        
+        .product-gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .product-main-image {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .product-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+        }
+        
+        .product-thumbnail {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: opacity 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .product-thumbnail:hover,
+        .product-thumbnail.active {
+            opacity: 1;
+            border-color: #D4A574;
+        }
+        
+        .product-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2C2C2C;
+            margin-bottom: 30px;
+        }
+        
+        .product-order-form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-section {
+            margin-bottom: 30px;
+        }
+        
+        .form-section-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2C2C2C;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .form-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .form-option {
+            padding: 10px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #ffffff;
+            color: #2C2C2C;
+        }
+        
+        .form-option:hover {
+            border-color: #D4A574;
+            background: #F5F0E8;
+        }
+        
+        .form-option.selected {
+            border-color: #D4A574;
+            background: #D4A574;
+            color: #ffffff;
+        }
+        
+        .submit-order-btn {
+            width: 100%;
+            padding: 14px;
+            background-color: #D4A574;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-order-btn:hover {
+            background-color: #B8955A;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+        }
+        
+        .product-description-section {
+            margin-top: 60px;
+        }
+        
+        .product-description-section h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            color: #2C2C2C;
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+        
+        .price-table th,
+        .price-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .price-table th {
+            background: #F5F0E8;
+            font-weight: 600;
+            color: #2C2C2C;
+        }
+        
+        .product-description-section p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        .product-description-section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .product-description-section li {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .category-link {
+            color: #D4A574;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .category-link:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .product-detail-wrapper {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="images/gmwood-logo.webp" alt="GM WOOD" onerror="this.src='https://gmwood.lv/wp-content/uploads/2023/06/cropped-gmwoodlogowhite-1.webp'; this.onerror=null;">
+            </a>
+            <nav class="header-nav">
+                <a href="index.html">GALVENĀ</a>
+                <a href="about.html">PAR MUMS</a>
+                <a href="products.html" class="active">PRODUKTI</a>
+                <a href="contacts.html">KONTAKTI</a>
+                <a href="tel:+37122812424" class="header-phone">(+371) 2281 2424</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Хлебные крошки -->
+    <nav class="product-detail-page">
+        <div class="breadcrumbs">
+            <a href="index.html">Galvenā</a> / 
+            <a href="products.html">Mūsu produkti</a> / 
+            <a href="products.html">Mucveida pirtis</a> / 
+            "Olas" formas mucveida pirts
+        </div>
+    </nav>
+
+    <!-- Основной контент -->
+    <main class="product-detail-page">
+        <div class="product-detail-wrapper">
+            <!-- Левая часть - Галерея изображений -->
+            <div class="product-gallery">
+                <img id="main-image" src="https://gmwood.lv/wp-content/uploads/2023/10/Olas-formas-mucveida-pirts-scaled.webp" alt="Olas formas mucveida pirts" class="product-main-image">
+                <div class="product-thumbnails">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/10/Olas-formas-mucveida-pirts-100x100.webp" alt="Thumbnail 1" class="product-thumbnail active" onclick="changeImage('https://gmwood.lv/wp-content/uploads/2023/10/Olas-formas-mucveida-pirts-scaled.webp', this)">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/07/Puspanoramas-logs-100x100.webp" alt="Thumbnail 2" class="product-thumbnail" onclick="changeImage('https://gmwood.lv/wp-content/uploads/2023/07/Puspanoramas-logs-scaled.webp', this)">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/07/Olas-formas-mucveida-pirts.-Priekstelpa-100x100.webp" alt="Thumbnail 3" class="product-thumbnail" onclick="changeImage('https://gmwood.lv/wp-content/uploads/2023/07/Olas-formas-mucveida-pirts.-Priekstelpa-scaled.webp', this)">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/07/Olas-formas-mucveida-pirts_2-100x100.webp" alt="Thumbnail 4" class="product-thumbnail" onclick="changeImage('https://gmwood.lv/wp-content/uploads/2023/07/Olas-formas-mucveida-pirts_2-scaled.webp', this)">
+                    <img src="https://gmwood.lv/wp-content/uploads/2023/07/Olas-formas-mucveida-pirts_1_-min-1-100x100.webp" alt="Thumbnail 5" class="product-thumbnail" onclick="changeImage('https://gmwood.lv/wp-content/uploads/2023/07/Olas-formas-mucveida-pirts_1_-min-1-scaled.webp', this)">
+                </div>
+            </div>
+
+            <!-- Правая часть - Информация и форма заказа -->
+            <div class="product-info-side">
+                <h1 class="product-title">"OLAS" FORMAS MUCVEIDA PIRTS</h1>
+                
+                <div class="product-order-form">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 30px; color: #2C2C2C;">Atstāt pieteikumu</h3>
+                    
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            Vēlamais Izmērs
+                            <span style="font-size: 0.9rem; color: #666;">ℹ️</span>
+                        </div>
+                        <div class="form-options" id="size-options">
+                            <div class="form-option" onclick="selectOption(this, 'size')">2 m</div>
+                            <div class="form-option" onclick="selectOption(this, 'size')">3 m</div>
+                            <div class="form-option" onclick="selectOption(this, 'size')">4 m</div>
+                            <div class="form-option" onclick="selectOption(this, 'size')">5 m</div>
+                            <div class="form-option" onclick="selectOption(this, 'size')">6 m</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            Konfigurācija
+                            <span style="font-size: 0.9rem; color: #666;">ℹ️</span>
+                        </div>
+                        <div class="form-options" id="config-options">
+                            <div class="form-option" onclick="selectOption(this, 'config')">Pērtuve</div>
+                            <div class="form-option" onclick="selectOption(this, 'config')">Āra terase + pērtuve</div>
+                            <div class="form-option" onclick="selectOption(this, 'config')">Priekštelpa + pērtuve</div>
+                            <div class="form-option" onclick="selectOption(this, 'config')">Āra terase + priekštelpa + pērtuve</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="form-section-title">
+                            Komplektācija
+                            <span style="font-size: 0.9rem; color: #666;">ℹ️</span>
+                        </div>
+                        <div class="form-options" id="complect-options">
+                            <div class="form-option" onclick="selectOption(this, 'complect')">Standarta</div>
+                            <div class="form-option" onclick="selectOption(this, 'complect')">Ar izmaiņām</div>
+                        </div>
+                    </div>
+                    
+                    <button class="submit-order-btn" onclick="submitOrder()">Sūtīt pieteikumu</button>
+                    
+                    <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                        Category: <a href="products.html" class="category-link">Mucveida pirtis</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Описание товара -->
+        <div class="product-description-section">
+            <h2>Apraksts</h2>
+            
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>"Olas" formas mucveida pirts izmērs</th>
+                        <th>Cena*</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2.0m</td>
+                        <td>3 050 EUR</td>
+                    </tr>
+                    <tr>
+                        <td>2.8m (ar terasi)</td>
+                        <td>3 350 EUR</td>
+                    </tr>
+                    <tr>
+                        <td>3.0m (ar priekštelpu)</td>
+                        <td>4 450 EUR</td>
+                    </tr>
+                    <tr>
+                        <td>3.8m (ar priekštelpu)</td>
+                        <td>4 850 EUR</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <p>
+                Iespējami arī citi izmēri! Garums līdz 6m.<br>
+                <strong>*Cena bez PVN</strong>
+            </p>
+            
+            <p>
+                "Olas" formas mucveida pirts apvieno gan apaļo, gan kvadrātveida formu priekšrocības, 
+                piedāvājot retu un unikālu dizainu. Šis dizains ir kompromisa risinājums tiem, kuri nevar izlemt 
+                starp apaļu vai kvadrātveida pirti, un tajā pašā laikā tas lieliski piemērots jebkurai ainavai.
+            </p>
+            
+            <p><strong>"Olas" formas mucveida pirts standarta komplektācija (pirtiņai ar priekštelpu):</strong></p>
+            <ul>
+                <li>Sienas biezums 42mm</li>
+                <li>Nerūsējošā tērauda stīpas 50mm</li>
+                <li>Viena vai divas telpas (pērtuve un priekštelpa)</li>
+                <li>Ārēja apstrāde ar aizsarglīdzekļiem PINOTEX</li>
+                <li>Verams logs pērtuvē un logs priekštelpā</li>
+                <li>Koka ārdurvis</li>
+                <li>Iekšā rūdītā stikla durvis</li>
+                <li>Elektroinstalācija (apgaismojums)</li>
+                <li>Jumts pārklāts ar bitumena šindeli un pergamīnu (divi slāņi)</li>
+                <li>Priekštelpā soliņi</li>
+                <li>Priekštelpā uzstādīts galds (pēc pieprasījuma)</li>
+                <li>Ventilācijas lūciņi</li>
+                <li>Divu līmeņu lāvas no melnalkšņa</li>
+                <li>Malkas krāsns ar dūmvadu</li>
+            </ul>
+            
+            <p><strong>Par papildu samaksu:</strong></p>
+            <ul>
+                <li>Transportēšana un uzstādīšana</li>
+                <li>Ūdens tvertne uz dūmvada</li>
+                <li>Citas opcijas</li>
+            </ul>
+            
+            <p><strong>Šis modelis pēc savas uzbūves ir piemērots:</strong></p>
+            <ul>
+                <li>Saunai</li>
+                <li>Kempinga mājai</li>
+            </ul>
+            
+            <p style="font-style: italic; color: #666;">
+                Var aprīkot ar dažāda veida/konfigurāciju logiem.
+            </p>
+            
+            <p style="font-style: italic; color: #666;">
+                Varam izgatavot pēc jūsu pasūtījuma. Pieejami arī citi modeļi.
+            </p>
+            
+            <p>
+                Vairāk mūsu produktu var apskatīt <a href="products.html" class="category-link">šeit</a>
+            </p>
+            <p>
+                Mūsu uzticamais partneris – <a href="https://eliste.lv/lv/" target="_blank" class="category-link">eliste.lv</a>
+            </p>
+        </div>
+
+        <!-- Связанные продукты -->
+        <section style="margin-top: 80px; padding: 60px 0; background-color: #F5F0E8;">
+            <div class="section-container">
+                <h2 style="text-align: center; color: #2C2C2C; margin-bottom: 50px; font-size: 2rem;">Saistītie produkti</h2>
+                <div class="products-grid" style="max-width: 1200px; margin: 0 auto;">
+                    <!-- Связанный товар 1 -->
+                    <div class="product-card">
+                        <a href="product-detail-kantaina.html">
+                            <img src="https://gmwood.lv/wp-content/uploads/2023/06/Mucveida-pirts-ar-terasi-300x300.webp" alt="Kantainā mucveida pirts">
+                        </a>
+                        <div class="product-info">
+                            <h3><a href="product-detail-kantaina.html" style="text-decoration: none; color: inherit;">Kantainā mucveida pirts</a></h3>
+                            <div class="product-cta">
+                                <a href="product-detail-kantaina.html" class="btn-cta">Vairāk</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Связанный товар 2 -->
+                    <div class="product-card">
+                        <a href="product-detail-ovala.html">
+                            <img src="https://gmwood.lv/wp-content/uploads/2023/06/IMG_1196-2-2-e1703782834225-300x300.webp" alt="Ovālā mucveida pirts">
+                        </a>
+                        <div class="product-info">
+                            <h3><a href="product-detail-ovala.html" style="text-decoration: none; color: inherit;">Ovālā mucveida pirts</a></h3>
+                            <div class="product-cta">
+                                <a href="product-detail-ovala.html" class="btn-cta">Vairāk</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Связанный товар 3 -->
+                    <div class="product-card">
+                        <a href="product-detail-apala.html">
+                            <img src="https://gmwood.lv/wp-content/uploads/2023/06/Apala-mucveida-pirts-2.0m-gara.webp" alt="Apaļā mucveida pirts">
+                        </a>
+                        <div class="product-info">
+                            <h3><a href="product-detail-apala.html" style="text-decoration: none; color: inherit;">Apaļā mucveida pirts</a></h3>
+                            <div class="product-cta">
+                                <a href="product-detail-apala.html" class="btn-cta">Vairāk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Футер -->
+    <footer class="site-footer">
+        <p>© GM WOOD. Visas tiesības aizsargātas</p>
+    </footer>
+
+    <!-- Плавающая кнопка с телефоном -->
+    <a href="tel:+37122812424" class="floating-phone-btn" title="Позвонить нам">
+        <svg fill="currentColor" viewBox="0 0 24 24" style="width: 32px; height: 32px;">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+        </svg>
+    </a>
+
+    <script>
+        // Функция для смены главного изображения при клике на миниатюру
+        function changeImage(src, element) {
+            document.getElementById('main-image').src = src;
+            // Обновляем активную миниатюру
+            document.querySelectorAll('.product-thumbnail').forEach(thumb => {
+                thumb.classList.remove('active');
+            });
+            element.classList.add('active');
+        }
+        
+        // Функция для выбора опции в форме
+        function selectOption(element, type) {
+            // Убираем выделение у всех опций этого типа
+            const container = element.parentElement;
+            container.querySelectorAll('.form-option').forEach(opt => {
+                opt.classList.remove('selected');
+            });
+            // Выделяем выбранную опцию
+            element.classList.add('selected');
+        }
+        
+        // Функция для отправки заказа
+        function submitOrder() {
+            const size = document.querySelector('#size-options .selected')?.textContent || '';
+            const config = document.querySelector('#config-options .selected')?.textContent || '';
+            const complect = document.querySelector('#complect-options .selected')?.textContent || '';
+            
+            if (!size || !config || !complect) {
+                alert('Lūdzu, izvēlieties visus nepieciešamos parametrus!');
+                return;
+            }
+            
+            // Перенаправляем на страницу контактов с данными
+            window.location.href = 'contacts.html';
+        }
+    </script>
+</body>
+</html>
