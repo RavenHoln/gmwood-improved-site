@@ -164,42 +164,42 @@
     height: 32px; /* Высота иконки */
 }
 
-/* Кнопка "Заказать консультацию" в hero-секции */
+/* Кнопка "Заказать консультацию" в hero-секции - стиль badge */
 .hero-cta-btn {
-    display: inline-block; /* Блочно-строчный элемент */
-    padding: 16px 32px; /* Внутренние отступы */
-    background: linear-gradient(to right, #06b6d4, #f97316); /* Градиент cyan-to-orange */
-    color: #ffffff; /* Белый цвет текста */
+    display: inline-flex; /* Инлайн-flex для badge стиля */
+    align-items: center; /* Выравнивание по центру */
+    justify-content: center; /* Выравнивание по центру */
+    padding: 12px 24px; /* Внутренние отступы */
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(249, 115, 22, 0.15)); /* Градиент фон с прозрачностью */
+    color: #0891b2; /* Cyan текст */
     text-decoration: none; /* Убирание подчеркивания */
-    border-radius: 50px; /* Полностью скругленные углы */
-    font-weight: 600; /* Жирность шрифта */
-    font-size: 1rem; /* Размер шрифта */
-    letter-spacing: 0.5px; /* Межбуквенный интервал */
-    transition: all 0.3s ease; /* Плавные переходы */
-    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.3); /* Тень с cyan */
-    border: none; /* Без границы */
+    border-radius: 9999px; /* Полностью скругленные углы (badge стиль) */
+    font-weight: 500; /* Средняя жирность (badge стиль) */
+    font-size: 0.875rem; /* Размер шрифта (14px) */
+    letter-spacing: 0.3px; /* Межбуквенный интервал */
+    transition: all 0.2s ease; /* Плавные переходы */
+    border: 1px solid rgba(6, 182, 212, 0.3); /* Cyan border */
+    box-shadow: none; /* Без тени (badge стиль) */
 }
 
-/* Альтернативный стиль для вторичной кнопки (прозрачная с рамкой) */
+/* Альтернативный стиль для вторичной кнопки (outline badge стиль) */
 .hero-cta-btn.secondary {
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    backdrop-filter: blur(10px);
-    box-shadow: none;
+    background: transparent; /* Прозрачный фон */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Белый border */
+    color: rgba(255, 255, 255, 0.9); /* Белый текст */
+    backdrop-filter: blur(10px); /* Размытие фона */
 }
 
 .hero-cta-btn.secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(6, 182, 212, 0.5);
-    color: #06b6d4;
-    box-shadow: 0 4px 15px rgba(6, 182, 212, 0.2);
+    background: rgba(255, 255, 255, 0.1); /* Легкий белый фон */
+    border-color: rgba(255, 255, 255, 0.5); /* Более яркий border */
 }
 
 /* Hover-эффект для hero CTA кнопки */
 .hero-cta-btn:hover:not(.secondary) {
-    background: linear-gradient(to right, #0891b2, #ea580c); /* Более насыщенный градиент */
-    transform: translateY(-3px) scale(1.02); /* Поднятие и увеличение */
-    box-shadow: 0 6px 20px rgba(6, 182, 212, 0.4); /* Усиленная тень */
+    background: linear-gradient(135deg, rgba(6, 182, 212, 0.25), rgba(249, 115, 22, 0.25)); /* Более темный градиент */
+    border-color: rgba(6, 182, 212, 0.4); /* Более темный border */
+    transform: translateY(-1px); /* Легкое поднятие */
 }
 
 /* Выделение телефона в шапке */
